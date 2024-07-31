@@ -7,6 +7,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using SistemaVenta.Datos.Repositorios.Contrato;
+using SistemaVenta.Datos.Repositorios;
+
 
 namespace SistemaVenta.IOC
 {
@@ -19,6 +22,12 @@ namespace SistemaVenta.IOC
             {
                 options.UseSqlServer(configuration.GetConnectionString("CadenaSQL"));
             });
+
+            //utilizamos el modelo generico (se utiliza en cualquier modelo)
+            services.AddTransient(typeof(IGenericRepository<>), typeof(GenericRepository<>));
+
+            //aca espcificaremos en que modelo
+            services.AddScoped<IVentaRepository,IVentaRepository>();
         }
 
     }
