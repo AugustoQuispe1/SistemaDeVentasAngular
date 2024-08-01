@@ -19,5 +19,7 @@ public partial class Usuario
 
     public DateTime? FechaRegistro { get; set; }
 
+
+    //sirve para poder relacionar el usuario con el rol (cray cray)
     public virtual Rol? IdRolNavigation { get; set; }
 }

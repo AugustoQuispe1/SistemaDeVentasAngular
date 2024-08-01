@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using SistemaVenta.Datos.Repositorios.Contrato;
 using SistemaVenta.Datos.Repositorios;
+using SistemaVenta.Utility;
 
 
 namespace SistemaVenta.IOC
@@ -28,6 +29,9 @@ namespace SistemaVenta.IOC
 
             //aca espcificaremos en que modelo
             services.AddScoped<IVentaRepository,IVentaRepository>();
+
+            //automapper
+            services.AddAutoMapper(typeof(AutoMapperProfile));
         }
 
     }
