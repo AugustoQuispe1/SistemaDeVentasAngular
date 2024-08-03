@@ -8,10 +8,8 @@ using SistemaVenta.DTO;
 
 namespace SistemaVenta.BLL.Servicios.Contrato
 {
-    public interface IRolService
+    public interface ICategoriaService
     {
-
-        Task<List<RolDTO>> Lista();
-
+        Task<List<CategoriaDTO>> Lista();
     }
 }

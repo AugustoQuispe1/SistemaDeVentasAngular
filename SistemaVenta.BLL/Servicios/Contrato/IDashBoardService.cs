@@ -5,13 +5,10 @@ using System.Text;
 using System.Threading.Tasks;
 using SistemaVenta.DTO;
 
-
 namespace SistemaVenta.BLL.Servicios.Contrato
 {
-    public interface IRolService
+    public interface IDashBoardService
     {
-
-        Task<List<RolDTO>> Lista();
-
+        Task<DashBoardDTO> Resumen();
     }
 }
