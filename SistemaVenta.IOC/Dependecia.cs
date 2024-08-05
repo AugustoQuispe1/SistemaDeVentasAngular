@@ -30,14 +30,16 @@ namespace SistemaVenta.IOC
             services.AddTransient(typeof(IGenericRepository<>), typeof(GenericRepository<>));
 
             //aca espcificaremos en que modelo
-            services.AddScoped<IVentaRepository,IVentaRepository>();
+            services.AddScoped<IVentaRepository, VentaRepository>();
+
+
 
             //automapper
             services.AddAutoMapper(typeof(AutoMapperProfile));
 
             //dependecias de las interfaces
 
-            //services.AddScoped<DbContext, DbventaContext>();
+            services.AddScoped<DbContext, DbventaContext>();
 
 
             services.AddScoped<IRolService, RolService>();

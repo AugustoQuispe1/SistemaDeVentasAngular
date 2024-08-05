@@ -20,7 +20,7 @@ namespace SistemaVenta.BLL.Servicios
 
         public ProductoService(IGenericRepository<Producto> productoReposito, IMapper mapper)
         {
-            _productoRepositorio = productoRepositorio;
+            _productoRepositorio = _productoRepositorio;
             _mapper = mapper;
         }
         public async Task<List<ProductoDTO>> Lista()
@@ -101,7 +101,7 @@ namespace SistemaVenta.BLL.Servicios
                 if (productoEncontrado == null)
                     throw new TaskCanceledException("No se encontro el producto");
 
-                bool respuesta = await _productoRepositorio.Eliminar(productoEncontrado);\
+                bool respuesta = await _productoRepositorio.Eliminar(productoEncontrado);
                 
                 if (!respuesta)
                     throw new TaskCanceledException("No se pudo eliminar");
