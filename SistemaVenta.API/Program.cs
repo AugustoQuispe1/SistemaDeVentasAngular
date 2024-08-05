@@ -11,6 +11,16 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.InyectarDependecias(builder.Configuration);
 
+//activar cors
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("NuevaPolitica", app => {
+        app.AllowAnyOrigin()
+        .AllowAnyHeader()
+        .AllowAnyMethod();
+        });
+});
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -19,6 +29,9 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+//autorizar cors
+app.UseCors("NuevaPolitica");
 
 app.UseAuthorization();
 
